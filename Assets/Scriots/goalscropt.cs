@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class goalscropt : MonoBehaviour {
 
+    public ParticleSystem particle;
+    public GameObject crearCanvas;
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("判定");
+        
+        if (other.gameObject.tag == "balltag")
+        {
+            crearCanvas.SendMessage("OnEnter");
+            particle.Play();
+
+            Destroy(particle.gameObject, particle.main.duration);
+
+            Destroy(this.gameObject);
+            
+        }
     }
     // Use this for initialization
     void Start () {
