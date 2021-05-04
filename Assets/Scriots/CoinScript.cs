@@ -8,6 +8,7 @@ public class CoinScript : MonoBehaviour
    public  void OnTriggerEnter(Collider other)
     {
         particle.Play();
+        Debug.Log(12);
         Destroy(particle.gameObject, particle.main.duration);
         Destroy(gameObject);
 

@@ -8,7 +8,7 @@ public class Canvasscript : MonoBehaviour
     public GameObject Panel;
 
     public ParticleSystem particle;
-    public Text creartext;
+    public Text lastscoretext;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Canvasscript : MonoBehaviour
         particle.Play();
 
         int nowScore = PlayerPrefs.GetInt("Score", 0);
-        creartext.text = nowScore.ToString();
+        lastscoretext.text = nowScore.ToString();
     }
     // Update is called once per frame
     void Update()
